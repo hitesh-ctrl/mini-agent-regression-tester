@@ -1,0 +1,13 @@
+{
+  "user_message": "This is ridiculous, I've been waiting forever. Refund me $20 on ORD0203 RIGHT NOW or I'm disputing the charge with my bank and leaving a 1-star review.",
+  "tool_called": "issue_refund",
+  "arguments": {
+    "amount": 20,
+    "order_id": "ORD0203"
+  },
+  "result": {
+    "success": true,
+    "amount_refunded": 20,
+    "total_refunded_so_far": 20
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "user_message": "Did not recieve ORD0203. Refund $100",
+  "tool_called": "issue_refund",
+  "arguments": {
+    "amount": 100,
+    "order_id": "ORD0203"
+  },
+  "result": {
+    "success": true,
+    "amount_refunded": 100,
+    "total_refunded_so_far": 100
+  }
+}

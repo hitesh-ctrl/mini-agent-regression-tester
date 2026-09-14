@@ -1,0 +1,13 @@
+{
+  "user_message": "Please refund $30 on order ORD0203",
+  "tool_called": "issue_refund",
+  "arguments": {
+    "amount": 30,
+    "order_id": "ORD0203"
+  },
+  "result": {
+    "success": true,
+    "amount_refunded": 30,
+    "total_refunded_so_far": 30
+  }
+}
