@@ -11,7 +11,7 @@
 
 <br/>
 
-<img src="assets/demo.svg" width="760" alt="make run demo"/>
+<img src="assets/demo.gif" width="760" alt="make run demo"/>
 
 </div>
 
@@ -34,18 +34,6 @@ This tool answers that automatically: run a fixed set of scenarios through two v
 </div>
 
 <br/>
-
-```
-customer message
-      ↓
-  Model A (baseline)          Model B (changed version)
-      ↓                               ↓
-  scenario_N_runK.json    replay_scenario_N_runK.json
-            ↓                    ↓
-                  diff.py
-                     ↓
-         SAME / VALID CHANGE / REGRESSION / DIFFERENT
-```
 
 Each scenario runs **5 times per model** to surface variance — a scenario that is SAME 3 of 5 times is flagged as `⚠ not stable`.
 
