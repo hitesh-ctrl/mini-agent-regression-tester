@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="678" viewBox="0 0 820 678">
+  <defs>
+    <style>
+      text { font-family: "Courier New", Consolas, monospace; font-size: 13px; }
+    </style>
+  </defs>
+
+  <!-- window background -->
+  <rect width="820" height="678" rx="10" fill="#0d1117"/>
+
+  <!-- title bar chrome -->
+  <rect width="820" height="34" rx="10" fill="#161b22"/>
+  <rect y="20" width="820" height="14" fill="#161b22"/>
+  <circle cx="18" cy="17" r="6" fill="#ff5f56"/>
+  <circle cx="38" cy="17" r="6" fill="#ffbd2e"/>
+  <circle cx="58" cy="17" r="6" fill="#27c93f"/>
+  <text x="410" y="22" text-anchor="middle" fill="#6e7681" font-size="11">
+    mini-agent-regression-tester — make run
+  </text>
+
+  <!-- blinking cursor -->
+  <rect x="24" y="41" width="8" height="14" fill="#79c0ff" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0;0.7" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <text x="24" y="54" fill="#79c0ff" font-family='Courier New',monospace font-size="13" opacity="0">$ make run<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0353;0.0453;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="72" fill="#6e7681" font-family='Courier New',monospace font-size="13" opacity="0">​<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1059;0.1159;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="90" fill="#58a6ff" font-family='Courier New',monospace font-size="13" opacity="0">=== baseline  (openai/gpt-oss-20b) ===<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1294;0.1394;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="108" fill="#6e7681" font-family='Courier New',monospace font-size="13" opacity="0">  baseline/scenario_01/run1 → scenario_01_run1.json<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1647;0.1747;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="126" fill="#6e7681" font-family='Courier New',monospace font-size="13" opacity="0">  baseline/scenario_02/run1 → scenario_02_run1.json<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1824;0.1924;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="144" fill="#6e7681" font-family='Courier New',monospace font-size="13" opacity="0">  … 20 scenarios × 5 runs each …<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2000;0.2100;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="162" fill="#6e7681" font-family='Courier New',monospace font-size="13" opacity="0">​<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2235;0.2335;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="180" fill="#58a6ff" font-family='Courier New',monospace font-size="13" opacity="0">=== replay  (openai/gpt-oss-safeguard-20b) ===<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2353;0.2453;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="198" fill="#6e7681" font-family='Courier New',monospace font-size="13" opacity="0">  replay/scenario_01/run1 → replay_scenario_01_run1.json<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2588;0.2688;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="216" fill="#6e7681" font-family='Courier New',monospace font-size="13" opacity="0">  … 20 scenarios × 5 runs each …<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2765;0.2865;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="234" fill="#6e7681" font-family='Courier New',monospace font-size="13" opacity="0">​<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3000;0.3100;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="252" fill="#3fb950" font-family='Courier New',monospace font-size="13" opacity="0">scenario_01: SAME (SAME 5/5)<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3176;0.3276;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="270" fill="#8b949e" font-family='Courier New',monospace font-size="13" opacity="0">  run1:SAME  run2:SAME  run3:SAME  run4:SAME  run5:SAME<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3353;0.3453;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="288" fill="#3fb950" font-family='Courier New',monospace font-size="13" opacity="0">scenario_02: SAME (SAME 5/5)<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3529;0.3629;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="306" fill="#8b949e" font-family='Courier New',monospace font-size="13" opacity="0">  run1:SAME  run2:SAME  run3:SAME  run4:SAME  run5:SAME<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3706;0.3806;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="324" fill="#e3b341" font-family='Courier New',monospace font-size="13" opacity="0">scenario_03: VALID CHANGE (VALID CHANGE 5/5)<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3882;0.3982;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="342" fill="#8b949e" font-family='Courier New',monospace font-size="13" opacity="0">  run1:VALID CHANGE  run2:VALID CHANGE  run3:VALID CHANGE …<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4059;0.4159;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="360" fill="#3fb950" font-family='Courier New',monospace font-size="13" opacity="0">scenario_04: SAME (SAME 5/5)<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4235;0.4335;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="378" fill="#8b949e" font-family='Courier New',monospace font-size="13" opacity="0">  run1:SAME  run2:SAME  run3:SAME  run4:SAME  run5:SAME<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4412;0.4512;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="396" fill="#e3b341" font-family='Courier New',monospace font-size="13" opacity="0">scenario_07: VALID CHANGE (VALID CHANGE 5/5)<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4588;0.4688;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="414" fill="#8b949e" font-family='Courier New',monospace font-size="13" opacity="0">  run1:VALID CHANGE  run2:VALID CHANGE  run3:VALID CHANGE …<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4765;0.4865;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="432" fill="#f85149" font-family='Courier New',monospace font-size="13" opacity="0">scenario_11: REGRESSION (REGRESSION 4/5, SAME 1/5) ⚠ not stable<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4941;0.5041;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="450" fill="#8b949e" font-family='Courier New',monospace font-size="13" opacity="0">  run1:REGRESSION  run2:SAME  run3:REGRESSION  run4:REGRESSION …<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5118;0.5218;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="468" fill="#6e7681" font-family='Courier New',monospace font-size="13" opacity="0">​<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5353;0.5453;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="486" fill="#8b949e" font-family='Courier New',monospace font-size="13" opacity="0">── Summary ──────────────────────────────────<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5471;0.5571;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="504" fill="#3fb950" font-family='Courier New',monospace font-size="13" opacity="0">  SAME          14 / 20<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5647;0.5747;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="522" fill="#e3b341" font-family='Courier New',monospace font-size="13" opacity="0">  VALID CHANGE   3 / 20<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5824;0.5924;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="540" fill="#f85149" font-family='Courier New',monospace font-size="13" opacity="0">  REGRESSION     2 / 20<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.6000;0.6100;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="558" fill="#d2a8ff" font-family='Courier New',monospace font-size="13" opacity="0">  DIFFERENT      1 / 20<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.6176;0.6276;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="576" fill="#6e7681" font-family='Courier New',monospace font-size="13" opacity="0">​<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.6353;0.6453;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="594" fill="#f85149" font-family='Courier New',monospace font-size="13" opacity="0">── Suspicious reply warnings ────────────────<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.6529;0.6629;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="612" fill="#f85149" font-family='Courier New',monospace font-size="13" opacity="0">  scenario_11/run3/baseline: reply mentions 'refunded' after failed call<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.6706;0.6806;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+  <text x="24" y="630" fill="#6e7681" font-family='Courier New',monospace font-size="13" opacity="0">​<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.7059;0.7159;0.9294;1" dur="8.5s" begin="0s" repeatCount="indefinite"/></text>
+</svg>
