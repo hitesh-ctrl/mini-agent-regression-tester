@@ -77,12 +77,45 @@ The order database resets from a clean seed before every individual scenario, no
 ```bash
 pip install -r requirements.txt
 cp .env.example .env   # add your Groq API key
-python main.py         # runs both model versions through all scenarios, writes traces
-python diff.py          # compares the two sets of traces, prints a verdict per scenario
+make run               # runs traces + prints summary table in one command
 ```
+
+Or manually:
+
+```bash
+python main.py         # runs both model versions through all 20 scenarios × 5 runs, writes traces
+python diff.py         # compares traces, prints a verdict per scenario with variance
+```
+
+## How to read the output
+
+Each scenario gets one line showing the dominant label and a per-run breakdown below it.
+
+```
+scenario_01: SAME (SAME 5/5)
+  run1:SAME  run2:SAME  run3:SAME  run4:SAME  run5:SAME
+scenario_03: VALID CHANGE (VALID CHANGE 5/5)
+  run1:VALID CHANGE  run2:VALID CHANGE  ...
+scenario_07: REGRESSION (REGRESSION 4/5, SAME 1/5) ⚠ not stable
+  run1:REGRESSION  run2:SAME  run3:REGRESSION  run4:REGRESSION  run5:REGRESSION
+
+── Summary ──────────────────────────────────
+  SAME         14 / 20
+  VALID CHANGE  3 / 20
+  REGRESSION    2 / 20
+  DIFFERENT     1 / 20
+```
+
+**SAME** — both versions made the same decision across all 5 runs.  
+**VALID CHANGE** — the versions diverged, but the new behavior is defensibly correct (the baseline's call was going to fail anyway, or the replay skipped a call that wasn't needed).  
+**REGRESSION** — a refund that the baseline issued correctly is now skipped, or the replay started issuing refunds the baseline correctly avoided.  
+**DIFFERENT** — the divergence doesn't fit the other buckets; needs manual review.  
+**⚠ not stable** — the dominant label won fewer than 5/5 runs. An agent that is SAME 3 of 5 times is not reliably the same.
+
+If the follow-up reply mentions "refunded" or a dollar amount after a failed tool call, `diff.py` also prints a **suspicious reply warning** — the model may be hallucinating a successful outcome.
 
 ## Where it stops short
 
-The diff only compares tool calls, order_id, amount, success or failure, not the text the agent actually says to the customer. At one point during testing, a model got a failed refund back from the tool and wrote a reply describing a refund history that didn't exist, specific dollar figures included, none of it matching the real order. The tool call itself got classified correctly by the diff. The fabricated sentence sitting right next to it would sail through completely unchecked. Catching that would mean also diffing reply content for factual consistency against the trace, not just the function call.
-
-The classifier logic is also specific to refunds, it knows how to check a refund amount against an order total because that rule is hand-written into `diff.py`. Extending this to more tools means either a hand-written rule per tool, which doesn't scale past a handful, or some other way to judge correctness that isn't hardcoded per action.
+- **Reply text is not checked for correctness** — the diff compares only tool calls, arguments, and success/failure. A model that issued a failed refund but wrote "Your $50 has been refunded" in the reply would not be caught (a suspicious-reply warning catches the most obvious version of this, but it's a heuristic).
+- **The classifier is refund-specific** — the SAME/REGRESSION/VALID CHANGE rules are hand-written for `issue_refund`. Generalizing to other tools would require either a rule per tool or an LLM judge.
+- **Variance is per-scenario, not per-claim** — 5 runs is enough to spot an unstable scenario; it is not enough to give a confidence interval.

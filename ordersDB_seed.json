@@ -3,5 +3,15 @@
     "customer": "Alex",
     "total": 120.0,
     "refunded_amount": 0
+  },
+  "ORD0001": {
+    "customer": "Sam",
+    "total": 50.0,
+    "refunded_amount": 0
+  },
+  "ORD0100": {
+    "customer": "Jordan",
+    "total": 80.0,
+    "refunded_amount": 80.0
   }
 }
